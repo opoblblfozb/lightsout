@@ -27,5 +27,10 @@ function toggleLight(light){
 }
 
 function onLoad(){
-  alert("ようこそようこそ！")
+  let lights = document.querySelectorAll('.light');
+  for (let l of lights){
+    if (Math.random() < 0.5){
+      toggleLight(l)
+    }
+  }
 }
