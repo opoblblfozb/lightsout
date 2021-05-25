@@ -1,8 +1,17 @@
 function onClickLight(light){
+  toggleLight(light);
+
+  if (document.querySelector(".off") === null){
+    alert("clear")
+  }
+}
+
+function toggleLight(light){
   light.classList.toggle("off");
   
   let x = Number(light.id[6]);
   let y = Number(light.id[8]);
+  
   
   let mv = [[0, 1], [1, 0], [0, -1], [-1, 0]];
   for (let mv_xy of mv){
@@ -12,11 +21,11 @@ function onClickLight(light){
     if (moved_right){
       moved_right.classList.toggle("off");
     } else {
-      moved_right.classList.toggle("off");
+      console.log("no light found")
     }
-  }
-  
-  if (document.querySelector(".on") === null){
-    alert("クリア！");
-  }
+  }  
+}
+
+function onLoad(){
+  alert("ようこそようこそ！")
 }
